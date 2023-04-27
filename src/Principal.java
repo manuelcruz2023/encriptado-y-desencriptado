@@ -25,7 +25,7 @@ public class Principal {
 
 
         System.out.println("-----Ingrese la palabra");
-        String frase = lectuScanner.next();
+        String frase = "-~ *! ** *& ";
         //primero pido la palabra que voy a encriptar
         System.out.println("------------------------BIENVENIDO AL MENU DE ENCRIPTADO------------------------");
         System.out.println("-----Ingrese en numero 1 para acceder al programa de Samuel Camargo");
@@ -101,9 +101,9 @@ public class Principal {
                     case OPCION_DESENCRIPTAR:
                         String desencriptarpalabra;
                         Desencriptado desencriptado = new Desencriptado();
-                        //desencriptado.;
-                        //desencriptarpalabra = desencriptado.
-                        //System.out.println(desencriptarpalabra);//pendiente
+                        desencriptado.angelapeña(frase);
+                        desencriptarpalabra = desencriptado.angelapeña(frase);
+                        System.out.println(desencriptarpalabra);//pendiente
                     
                 }
         }

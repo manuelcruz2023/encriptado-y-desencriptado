@@ -1,6 +1,6 @@
 public class Desencriptado {
 
-    public String samuel_camargo_desencriptado (String frase){
+    public String samuel_camargo_desencriptado (String frase){//tomo como base el ejercicio de encriptado de Samuel----completado
         String encriptarPalabra = ""; //se inicializa una varianle para contener el resultado
 
         String[] abecedario = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}; // se inicializa un vector para contener las letras del abecedario
@@ -25,7 +25,7 @@ public class Desencriptado {
 
                 condicion=condicion+abecedario.length;
             }
-            if (condicion>25){
+            if (condicion>25){//solo agrego una nueva condicion que no me busque una posicion que no existe en el vector
                 condicion = condicion - abecedario.length;
             }
             if (deletras.contains(letras) == true ){ // se crea la condicion para encriptar la palabra
@@ -42,7 +42,7 @@ public class Desencriptado {
 
 
 
-    public String sergio (String frase) {//ejercicio pendiente no entiendo el y=y%z;
+    public String sergio (String frase) {//tomo como base el ejercicio de encriptado de Sergio----ejercicio pendiente no entiendo el y=y%z;
 		String[] vector={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"," "};
 		String resultado="";
 		for(int i=0;i<frase.length();i++){//ciclo desde la primera letra hasta la ultima
@@ -71,55 +71,41 @@ public class Desencriptado {
 
 
     
-    public String angelapeña (String frase){
-		/*
-		 * Esta funcion recibe una palabra para encriptarla, primero toma la palabra ingresada y la vuelve al reves, luego toma la 
-		 * palabra al reves y segun la distancia que hay desde el inicio del abecedario hasta cada letra de la palabra, toma esa misma 
-		 * distancia desde el final del abecedario y genera una nueva posicion, finalmete toma en un vector de caracteres especiales
-		 * esta nueva posicion y lo que hay en ella lo mete dentro de una variable que va a ser la que retorna mi funcion
-		 */
-
-		/*en el primer paso para encriptar tomo la palabra al reves 
-        hago un ciclo que tome cada valor desde la longitud total de la palabra hasta 0*/
-
+    public String angelapeña (String frase){//tomo como base el ejercicio de encriptado de Angela
 		String resultante1 = ""; //defino una variable tipo String donde voy a incluir la nueva palabra formada letra por letra
-		int longitud_palabra = frase.length();//hallo la longitud de la palabra con .length para hacer un ciclo
+		int longitud_palabra = frase.length();
 		for(int contador = longitud_palabra; contador>0 ; contador--){ 
-			//hago un ciclo que tome cada valor desde la longitud total de la palabra hasta 0
 			String letra = frase.substring(contador-1, contador); //tomo cada letra de la palabra
 			resultante1= resultante1 + letra; // agrego la letra en que va el ciclo a la variable de la palabra al revés
 		}
-
-		/*ahora defino un vector de caracteres especiales o signos que voy a utilizar para encriptar segun la posicion del abecedario.
-        Este vector toma como base los numeros, son diferentes hasta 9 y luego son combinaciones*/
 		String [] caracteres_diferentes = {"+", "*","-", "?","!", "~","#", "$","&", "%","*+", "**","*-", "*?","*!", "*~","*#", "*$","*&", "*%","-+", "-*","--", "-?","-!", "-~",};
 		//defino en un vector el abecedario 
 		String [] abecedario = {"a", "b","c", "d","e", "f","g", "h","i", "j","k", "l","m", "n","o", "p","q", "r","s", "t","u", "v","w", "x","y", "z",};
-		String palabra_encriptada = "";  //defino una variable vacia, tipo string en la que voy a meter la palabra encriptada dentro del ciclo
+		String palabra_desencriptada = "";  //defino una variable vacia, en donde voy a ir guardando mi palabra desencriptada
 		int longitud_palabra2 = resultante1.length();  //defino en una variable la longitud de la palabra resultante1
 
-		//Recorro la palabra resultante1 tomando cada letra, para esto utilizo la longitud asignada a la anterior variable
-		for (int posicion_letra = 1; posicion_letra<=longitud_palabra2; posicion_letra++){
-			//en la variable letra_palabra voy tomando cada letra de la palabra ingresada
-			String letra_palabra = resultante1.substring(posicion_letra-1,posicion_letra);
+		//Recorro la palabra tomando cada letra, para esto utilizo la longitud asignada a la anterior variable
+		for (int posicion_letra = 0; posicion_letra<=longitud_palabra2-1; posicion_letra++){
+			String caracter_encriptado = resultante1.substring(posicion_letra,posicion_letra+1);
 
 			//Dentro de este ciclo hacer otro ciclo anidado que recorra el vector 
 			for( int posicion_vector = 0; posicion_vector<abecedario.length; posicion_vector ++){
-				//comparo la letra en la que esta el ciclo de la palabra, con la letra que esta en el ciclo del arreglo de abecedario
-				String letra_vector = abecedario[posicion_vector];
+				//comparo la letra en la que esta el ciclo de la palabra, con la letra que esta en el ciclo del arreglo de los caracteres diferentes
+				String letra_vector = caracteres_diferentes[posicion_vector];
 
 
-				//la funcion.equals compara strings. Si la letra de la palabra es igual a la letra del vector entra al condicional 
-				if(letra_palabra.equals(letra_vector)){
-					/* tomo la posicion en que va el vector y la resto a la longitud del abecedario, este resultado lo asigno a una
-                    nueva variable como la nueva posicion con la que se va a tomar la letra para la palabra resultante2*/
-					int nueva_posicion = (abecedario.length-1) - posicion_vector;
-					//tomo esa nueva posicion en el vector de caracteres especiales y la agrego a la palabra encriptada resultante
-					palabra_encriptada = palabra_encriptada + caracteres_diferentes[nueva_posicion]+" ";
+                if(caracter_encriptado.equals(letra_vector)){
+                    caracter_encriptado = " " + caracter_encriptado + " ";
+                    letra_vector = " " + letra_vector + " ";
+                    if (caracter_encriptado.equals(letra_vector)){
+                        int posicionabc = posicion_vector + ((abecedario.length-1)-posicion_vector);
+                        palabra_desencriptada = palabra_desencriptada + abecedario[posicionabc];
+                    }
+                    
 				}
 			}
 		}
 		//finalmente la funcion me retorna la palabra encriptada
-		return(palabra_encriptada);
+		return(palabra_desencriptada);
 	}
 }
