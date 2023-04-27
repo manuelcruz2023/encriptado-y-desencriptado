@@ -25,7 +25,7 @@ public class Principal {
 
 
         System.out.println("-----Ingrese la palabra");
-        String frase = "-~ *! ** *& ";
+        String frase = lectuScanner.nextLine();
         //primero pido la palabra que voy a encriptar
         System.out.println("------------------------BIENVENIDO AL MENU DE ENCRIPTADO------------------------");
         System.out.println("-----Ingrese en numero 1 para acceder al programa de Samuel Camargo");
