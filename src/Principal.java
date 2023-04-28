@@ -9,7 +9,7 @@ public class Principal {
         final int OPCION_SERGIO = 2;
         final int OPCION_ANGELA_PEÑA = 3;
         final int OPCION_SELENE = 4;
-        final int OPCION_YIMIR = 5;
+        final int OPCION_YIRMAN = 5;
         final int OPCION_DAVID_CRUZ = 6;
         final int OPCION_LAURA_CAMPIÑO = 7;
         final int OPCION_NICOL_CEPEDA = 8;
@@ -87,7 +87,7 @@ public class Principal {
                     
                 }
 
-                case OPCION_ANGELA_PEÑA:
+            case OPCION_ANGELA_PEÑA:
                 System.out.println("-----Ingrese 1 para Encriptar");
                 System.out.println("-----Ingrese 2 para Desencriptar");
                 int opcion4 = lectuScanner.nextInt();
@@ -105,7 +105,7 @@ public class Principal {
                         desencriptarpalabra = desencriptado.angelapeña(frase);
                         System.out.println(desencriptarpalabra);//completado
                     }
-                case OPCION_SELENE:
+            case OPCION_SELENE:
                 System.out.println("-----Ingrese 1 para Encriptar");
                 System.out.println("-----Ingrese 2 para Desencriptar");
                 int opcion5 = lectuScanner.nextInt();
@@ -125,6 +125,16 @@ public class Principal {
                     desencriptado.selene(frase, cuantos, variable);
                     desencriptarpalabra = desencriptado.selene(frase, cuantos, variable);;
                     System.out.println(desencriptarpalabra);
+                }
+            case OPCION_YIRMAN:
+                System.out.println("-----Ingrese 1 para Encriptar");
+                System.out.println("-----Ingrese 2 para Desencriptar");
+                int opcion6 = lectuScanner.nextInt();
+                switch (opcion6){
+                    case OPCION_ENCRIPTAR:
+                    String encriptarPalabra;
+                    Encriptado encriptado = new Encriptado();
+                    encriptarPalabra = encriptado.yirman(frase, );
                 }
 
         }
