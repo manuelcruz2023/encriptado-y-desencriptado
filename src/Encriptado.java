@@ -139,7 +139,7 @@ public class Encriptado {
 	public String selene (String frase){
 		String texto=frase;
 		//*esta función recibe una palabra para encriptarla, según la posición en el abecedario de la letra, se realizará
-        /* la sucesión de fibonnaci, y se arrojara el número resultante*/
+    	/* la sucesión de fibonnaci, y se arrojara el número resultante*/
        String fin ="programa finalizado"; 
        String[] abecedario = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"};//array abecedario
        int large = texto.length();//largo de la palabra ingresada para hacer un ciclo

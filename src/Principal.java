@@ -76,7 +76,7 @@ public class Principal {
                         String encriptarPalabra;
                         Encriptado encriptado = new Encriptado();
                         encriptarPalabra = encriptado.sergio(frase);
-                        System.out.println(encriptarPalabra);//pendiente
+                        System.out.println(encriptarPalabra);
                     break;
                     case OPCION_DESENCRIPTAR:
                         String desencriptarpalabra;
@@ -96,16 +96,37 @@ public class Principal {
                         String encriptarPalabra;
                         Encriptado encriptado = new Encriptado();
                         encriptarPalabra = encriptado.angelapeña(frase);
-                        System.out.println(encriptarPalabra);//pendiente
+                        System.out.println(encriptarPalabra);
                     break;
                     case OPCION_DESENCRIPTAR:
                         String desencriptarpalabra;
                         Desencriptado desencriptado = new Desencriptado();
                         desencriptado.angelapeña(frase);
                         desencriptarpalabra = desencriptado.angelapeña(frase);
-                        System.out.println(desencriptarpalabra);//pendiente
-                    
+                        System.out.println(desencriptarpalabra);//completado
+                    }
+                case OPCION_SELENE:
+                System.out.println("-----Ingrese 1 para Encriptar");
+                System.out.println("-----Ingrese 2 para Desencriptar");
+                int opcion5 = lectuScanner.nextInt();
+                switch (opcion5){
+                    case OPCION_ENCRIPTAR:
+                    String encriptarPalabra;
+                    Encriptado encriptado = new Encriptado();
+                    encriptarPalabra = encriptado.selene(frase);
+                    System.out.println(encriptarPalabra);
+                    break;
+                    case OPCION_DESENCRIPTAR:
+                    System.out.println("-----Favor diga cuantos numeros va a ingresar");
+                    int cuantos = lectuScanner.nextInt();
+                    int variable = lectuScanner.nextInt();
+                    String desencriptarpalabra;
+                    Desencriptado desencriptado = new Desencriptado();
+                    desencriptado.selene(frase, cuantos, variable);
+                    desencriptarpalabra = desencriptado.selene(frase, cuantos, variable);;
+                    System.out.println(desencriptarpalabra);
                 }
+
         }
     }
 }
