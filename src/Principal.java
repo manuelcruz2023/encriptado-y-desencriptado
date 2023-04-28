@@ -132,9 +132,37 @@ public class Principal {
                 int opcion6 = lectuScanner.nextInt();
                 switch (opcion6){
                     case OPCION_ENCRIPTAR:
+                    System.out.println("-----Favor ingrese un año");
+                    int año = lectuScanner.nextInt();
+                    System.out.println("-----Favor ingrese un mes");
+                    int mes = lectuScanner.nextInt();
                     String encriptarPalabra;
                     Encriptado encriptado = new Encriptado();
-                    encriptarPalabra = encriptado.yirman(frase, );
+                    encriptarPalabra = encriptado.yirman(frase, año, mes);
+                    System.out.println(encriptarPalabra);
+                    break;
+                    case OPCION_DESENCRIPTAR:
+
+                }
+            
+
+
+            case OPCION_ELIAS_CAMARGO:
+                System.out.println("-----Ingrese 1 para Encriptar");
+                System.out.println("-----Ingrese 2 para Desencriptar");
+                int opcion12 = lectuScanner.nextInt();
+                switch (opcion12){
+                    case OPCION_ENCRIPTAR:
+                    String encriptarPalabra;
+                    Encriptado encriptado = new Encriptado();
+                    encriptarPalabra = encriptado.eliascamargo(frase);
+                    System.out.println(encriptarPalabra);
+                    break;
+                    case OPCION_DESENCRIPTAR:
+                    String desencriptarpalabra;
+                    Desencriptado desencriptado = new Desencriptado();
+                    //desencriptarpalabra = desencriptado.eliascamargo(frase);
+                    //System.out.println(desencriptarpalabra);
                 }
 
         }

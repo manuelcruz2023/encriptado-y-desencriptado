@@ -150,15 +150,13 @@ public class Desencriptado {
 
 
 	public String selene (String frase, int cuantos, int variable){//tomo como base el ejercicio de selene
-		Scanner lectuScanner = new Scanner(System.in);
-		
 		String desencriptado = "";
 		String[] abecedario = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p",
 				"q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };// array abecedario
 		int[] sucesión_de_fibonacci = { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181,
 				6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418 };
 		for (int ciclos = 1; ciclos <= cuantos; ciclos++) {
-			variable = lectuScanner.nextInt();
+			int variables = variable;
 			for (int i = 0; i < sucesión_de_fibonacci.length; i++) {
 				int numero_fibonnaci = sucesión_de_fibonacci[i];
 				if (variable == numero_fibonnaci){
@@ -179,4 +177,27 @@ public class Desencriptado {
 
        return desencriptado;
 	}
+
+
+
+
+
+		public int eliascamargo (String letra) {
+			// Método para obtener la posición de una letra en el alfabeto
+			int posicion = -1;
+			String[] abcd = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+			for (int pos = 0; pos < abcd.length; pos++) {
+				String letraAbc = abcd[pos];
+				if (letraAbc.equals(letra)) {
+					posicion = pos;
+					break;
+				}
+			}
+			return posicion;
+		}      
+
+
+
+
+	
 }
